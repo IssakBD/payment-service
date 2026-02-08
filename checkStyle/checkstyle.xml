@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+        "https://checkstyle.org/dtds/configuration_1_3.dtd">
+<module name="Checker">
+    <!-- Устанавливаем кодировку файлов -->
+    <property name="charset" value="UTF-8"/>
+    <module name="TreeWalker">
+        <!-- Проверка длины строки -->
+        <module name="LineLength">
+            <property name="max" value="120"/> <!-- Максимальная длина строки-->
+        </module>
+        <!-- Проверка пробела после определённых символов -->
+        <module name="WhitespaceAfter"/>
+        <!-- Проверка пробелов вокруг операторов -->
+        <module name="WhitespaceAround"/>
+        <!-- Проверка на финальные локальные переменные -->
+        <module name="FinalLocalVariable"/>
+        <!-- Проверка на неиспользуемые импорты -->
+        <module name="UnusedImports"/>
+        <!-- Проверка отступов -->
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/> <!-- Базовый отступ -->
+            <property name="braceAdjustment" value="0"/> <!-- Отступ для скобок-->
+            <property name="caseIndent" value="4"/> <!-- Отступ для case в switch -->
+            <property name="throwsIndent" value="4"/> <!-- Отступ для throws-->
+            <property name="arrayInitIndent" value="4"/> <!-- Отступ дляинициализации массивов -->
+            <property name="lineWrappingIndentation" value="4"/> <!-- Отступдля переноса строк -->
+            <property name="forceStrictCondition" value="true"/> <!-- Строгая проверка отступов -->
+        </module>
+    </module>
+</module>
