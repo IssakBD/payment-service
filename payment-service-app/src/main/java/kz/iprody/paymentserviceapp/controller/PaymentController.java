@@ -16,13 +16,7 @@ public class PaymentController {
 
     private final Payment payment = new Payment(1L, 99.99);
     private Map<Long, Payment> payments = new HashMap<>();
-    public PaymentController() {
-        payments.put(1L, payment);
-        payments.put(2L, new Payment(2L, 150.50));
-        payments.put(3L, new Payment(3L, 200.00));
-        payments.put(4L, new Payment(4L, 75.25));
-        payments.put(5L, new Payment(5L, 300.99));
-    }
+    public PaymentController() { payments.put(1L, payment);payments.put(2L, new Payment(2L, 150.50));payments.put(3L, new Payment(3L, 200.00));payments.put(4L, new Payment(4L, 75.25));payments.put(5L, new Payment(5L, 300.99));}
 
     @GetMapping
     public ArrayList<Payment> getPayment() {
