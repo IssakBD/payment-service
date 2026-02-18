@@ -1,0 +1,70 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0
+      author: bissak
+      changes:
+        - createTable:
+            tableName: payment
+            remarks: Таблица для хранения платежей
+            columns:
+              - column:
+                  name: guid
+                  type: UUID
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_payment
+                  remarks: Уникальный идентификатор платежа
+
+              - column:
+                  name: inquiry_ref_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+                  remarks: ID запроса
+
+              - column:
+                  name: amount
+                  type: DECIMAL(5,2)
+                  constraints:
+                    nullable: false
+                  remarks: Сумма платежа
+
+              - column:
+                  name: currency
+                  type: VARCHAR(3)
+                  constraints:
+                    nullable: false
+                  remarks: Валюта платежа (3 символа)
+
+              - column:
+                  name: transaction_ref_id
+                  type: UUID
+                  constraints:
+                    nullable: true
+                  remarks: ID транзакции
+
+              - column:
+                  name: status
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+                  remarks: Статус платежа (значения из PaymentStatus enum)
+
+              - column:
+                  name: created_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  constraints:
+                    nullable: false
+                  remarks: Дата и время создания
+
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP WITH TIME ZONE
+                  constraints:
+                    nullable: false
+                  remarks: Дата и время последнего обновления
+
+        - rollback:
+            - dropTable:
+                tableName: payment

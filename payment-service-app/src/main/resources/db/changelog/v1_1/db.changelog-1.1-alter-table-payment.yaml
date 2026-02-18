@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.1-alter-table-table-add-note
+      author: bissak
+      changes:
+        - alterTable:
+            tableName: payment
+            changes:
+              - addColumn:
+                  tableName: payment
+                  columns:
+                    - column:
+                        name: note
+                        type: TEXT
+                        constraints:
+                          nullable: true
+                        remarks: Заметки к платежу
