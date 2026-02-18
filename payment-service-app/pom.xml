@@ -62,6 +62,13 @@
 			<version>42.7.6</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>2.4.240</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 
@@ -107,7 +114,6 @@
 				</executions>
 				<configuration>
 					<configLocation>../checkstyle.xml</configLocation>
-					<encoding>UTF-8</encoding>
 					<consoleOutput>true</consoleOutput>
 					<failOnViolation>true</failOnViolation>
 				</configuration>
